@@ -1,0 +1,44 @@
+1. What is difference between Function Declaration and Function Expression?
+Function Declaration Syntax:
+	function <f_name>()
+	{/*body*/
+	}
+Function Expression Syntax:
+	let <v_name>=function(parameters if any)
+	{
+	/*body*/
+	}
+->function name is not mandatory in function expression
+
+2. Write down the syntax rules of an Arrow function.
+Arrow function Syntax:
+	const <var_name> = (parameter1,parameter2,..)=>{
+	/*function body*/
+	}
+
+3. Using Function Declaration create a function which will add two numbers.
+function add(x,y)
+{
+	return x+y;
+	}
+	
+4. Using Function Expression create a function which will multiply two numbers.
+let add=function(x,y){
+			return x*y;
+			}
+			
+5. Using Arrow Function create a function to subtract two numbers.
+let add=(x,y)=>{
+			return x-y;
+			}
+
+6. Create IIFE which will accept a string as argument and return the reversed string.
+(function(str)=>{
+		for(i=0,j=str.length;i<j;i++,j--)
+		{
+			temp=str.charAt(i)
+			str.charAt(i)=str.charAt(j)
+			str.charAt(j)=temp
+			}
+			return str;
+			})();

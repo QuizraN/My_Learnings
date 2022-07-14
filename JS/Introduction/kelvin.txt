@@ -1,0 +1,11 @@
+const kelvin=0;//todays forecast is 293 kelvin
+//c=k-273
+let celsius=kelvin-273;
+//f=c*(9/5)+32
+let farenheit=celsius*(9/5)+32;
+//rounding off the farenheit
+farenheit=Math.floor(farenheit);
+console.log(`The temperature is ${farenheit} degrees Fahrenheit.`)
+let Newton = celsius * (33/100)
+Newton=Math.floor(Newton);
+console.log(`The temperature is ${Newton} degrees Newton.`)

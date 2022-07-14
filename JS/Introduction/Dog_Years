@@ -1,0 +1,18 @@
+const myAge=21;//My current age
+
+var earlyYears=2;//this is a dogs early age years which is equal to 10.5 dog years
+
+earlyYears=earlyYears*10.5;
+
+var laterYears=myAge-2;
+
+laterYears=laterYears*4;//1later years of human =4 years of dogs life
+
+console.log(earlyYears);
+console.log(laterYears);
+
+let myAgeInDogYears=earlyYears+laterYears;//summing up for total age
+
+let myName='Quizra'.toLowerCase();//name to lowercase
+
+console.log(`My name is ${myName}. I am HUMAN AGE years old in human years which is ${myAgeInDogYears} years old in dog years.`)

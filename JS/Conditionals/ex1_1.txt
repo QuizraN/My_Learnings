@@ -1,0 +1,68 @@
+1. Write a condition that returns true for == but not === and explain why
+
+if(1=='1')
+{
+	console.log(condition(==));
+	}
+else if(1==='1')
+{
+	console.log(condition(===));
+	}
+else
+{
+	console.log('condition fail');
+	}
+
+
+
+2. Write a single if condition that returns true if x is greater than or equal to 10 and is even, or if x is less than 10 and is odd
+
+if(x>=10 && x%2==0)
+{return true;}
+else
+{return false;}
+
+
+
+3. Use a ternary operator to assign 'odd' or 'even' to a variable called 'output' by checking if a variable 'x' is odd or even
+
+
+let output=x%2==0?'even':'odd'
+
+
+4. Using if/else if/else write a program that takes an input x (1-7) and prints corresponding weekday (1-Sunday etc).  If input is invalid print invalid input.
+
+if(x==1)
+{	console.log('1-Sunday');}
+else if(x==2)
+{	console.log('2-Monday');}
+else if(x==3)
+{	console.log('3-Tuesday');}
+else if(x==4)
+{	console.log('4-Wednesday');}
+else if(x==5)
+{	console.log('5-Thursday');}
+else if(x==6)
+{	console.log('6-Friday');}
+else if(x==7)
+{	console.log('7-Saturday');}
+else
+{	console.log('Invalid input');}
+
+
+
+5. Solve question 4 using switch case
+switch(x)
+{
+	case 1:console.log('1-Sunday');break;
+	case 2:console.log('2-Sunday');break;
+	case 3:console.log('3-Sunday');break;
+	case 4:console.log('4-Sunday');break;
+	case 5:console.log('5-Sunday');break;
+	case 6:console.log('6-Sunday');break;
+	case 7:console.log('7-Sunday');break;
+	default:console.log('Invalid input');
+}
+
+
+
