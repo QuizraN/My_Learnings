@@ -1,0 +1,75 @@
+Exercise - Guess the output
+For each of the following, try to work out what the output will be. Run the code in the browser console to check your answer.
+
+1.
+var a = 12;
+(function() {
+  console.log(a);
+})();
+
+OUTPUT: 12
+
+2.
+var a = 5;
+(function() {
+  var a = 12;
+  console.log(a);
+})();
+
+OUTPUT: 12
+
+3.
+var a = 10;
+var x = (function() {
+  var a = 12;
+  return (function() {
+    console.log(a);
+  });
+})();
+x();
+
+OUTPUT: 12
+
+4.
+var a = 10;
+var x = (function() {
+  var y = function() {
+    var a = 12;
+  };
+  return function() {
+    console.log(a);
+  }
+})();
+x();
+
+OUTPUT: 10
+
+5.
+var a = 10;
+var x = (function() {
+  (function(a) {
+   // a = 12; // <<< look carefully at this line.
+  })(13);
+  return (function() {
+    console.log(a);
+  });
+})();
+x();
+
+OUTPUT: 12
+
+6.
+var a = 10;
+(function() {
+  var a = 15;
+  window.x = function() {
+    console.log(a);
+  }
+})();
+x();
+
+OUTPUT: 15
+NOTE:
+The Window Object​​ represents the browser's window. All global JavaScript objects, functions, and variables automatically become members of the window object
+
+
