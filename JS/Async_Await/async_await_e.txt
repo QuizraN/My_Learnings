@@ -17,11 +17,14 @@ async function getProcessedData(url)
 	try
 	{
 	const p1= await downloadData(url);
-	const p2= await processDataInWorker(p1);
 	}
 	catch(e)
 	{
 		await downloadFallbackData(url);
+	}
+	finally
+	{
+		await processDataInWorker(p1);
 	}
 }
 
@@ -29,4 +32,4 @@ async function getProcessedData(url)
 NOTE:
 1.Asynchronous functions always returns a promise
 2.The async keyword allows you to define a function that handles asynchronous operations.
-3.You use the await keyword to wait for a Promise to settle either in resolved or rejected state. And you can use the await keyword only inside an async function.
+3.You use the await keyword to wait for a Promise to settle either in resolved or rejected state. And you can use the await keyword only inside an async function
