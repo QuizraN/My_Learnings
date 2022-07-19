@@ -1,0 +1,67 @@
+1. Write a function which takes an object as input and print out its properties
+
+const object={
+	color:'pink',
+	id:'2'
+};
+const x=(obj)=>{
+	for(let i in obj)
+	{
+	console.log(`${i}:${obj[i]}`);
+	}
+}
+//function below takes object as input
+x(object);
+
+
+
+
+
+2. How to delete property 'a' from object x={'a':1,'b':2}
+
+The delete keyword deletes both the value of the property and the property itself from the object. 
+=>delete x.a
+
+
+
+
+
+
+3. Given x = {a:'1'}; y = x; does changing y.a change x.a? why? (looking for the answer - objects are pass by reference)
+Yes changing y.a will change x.a 
+Since objects are passed by reference => x and y are pointing to same loctaion and hence a change made to y is reflected in x as well
+
+
+
+
+4. Copy x = {'a':1} to a variable y without creating a reference to x
+
+1.const ob4={...obj1}
+2.const ob=Object.assign(target,souce1,source2)
+
+
+
+5. Write a function to check if two objects are equal
+
+let ob1={a:'1',b:'2'}
+let ob2={a:'1',b:2}
+let ob3={a:'1',b:'2'}
+
+const check=(x,y)=>
+{
+	if(x.a===y.a)
+	{
+		if(x.b===y.b)
+		{return true;}
+	}
+	return false;
+}
+console.log(check(ob1,ob2));//false
+console.log(check(ob1,ob3));//true
+
+
+NOTE:
+1.For a function defined inside of an object, this will refer to that object itself. For a function defined outside of an object, this will refer to the global object (window in a browser, global in Node.js)
+2.A JavaScript function that returns an object is known as a factory function.
+3.When the data stored on an object is a function we call that a method. 
+4.Objects are passed by reference. 
