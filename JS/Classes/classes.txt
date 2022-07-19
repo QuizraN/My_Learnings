@@ -1,0 +1,79 @@
+"1. Implement Queue using javascript class. It should have the below methods
+    * enqueue
+    * dequeue
+    * front
+    * isEmpty
+ /*In queue.js file*/
+ class q
+{
+	enque(a,x)
+	{
+		a.push(x);
+	}
+	deque(a)
+	{
+		console.log(a.shift()+' is removed');
+	}
+	isFull(a,limit)
+	{
+		if(a.length==limit)
+		{return true;}
+		return false;
+	}
+	isEmpty(a)
+	{
+		if(a.length==0)
+			return true;
+		return false;
+	}
+}
+let a=[];
+let limit=6;
+var o1=new q();
+o1.enque(a,10);
+console.log(a);
+o1.deque(a);
+console.log(a);
+console.log(o1.isEmpty(a));
+console.log(o1.isFull(a,limit));
+
+OUTPUT:
+[ 10 ]
+10 is removed
+[]
+true
+false
+
+
+    
+2. Explain instanceOf operator with an example.
+
+instanceOf operator is used to check if an object is an instance of a class or not
+
+it returns true for an object if the object is an instance in the prototype chain
+Ex:
+class Student{
+	constructor(name){
+		this.name=name;
+		}
+		}
+let s1=new Student("Quizra");
+console.log(s1 instanceof Student)//true
+console.log(s1 instanceof Object)//true
+Prototype chain: (Object.prototype->Student.prototype->s1) is the hierarchy	``
+
+
+
+
+NOTE:
+1.classes are special functions, you can use the typeof operator of to check
+2.the instanceof operator uses the Symbol.hasInstance function to check the relationship. The Symbol.hasInstance() accepts an object and returns true if a type has that object as an instance.
+ex:class Person {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+let p1 = new Person('John');
+
+console.log(Person[Symbol.hasInstance](p1)); // true
