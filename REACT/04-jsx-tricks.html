@@ -1,0 +1,25 @@
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+    <script type="text/babel">
+        const rootelement=document.getElementById('root')
+
+        const var1='Hello var1'
+        const var2="Hello var2"
+        const classN="myclass1"
+        const children='var3'
+        const className='myclass2'
+        const props={children,className}//[] will treat is an array
+
+        //const jsxelement= <div className={classN} >{var1}<br></br> <strong>{var2}</strong></div>
+        //ReactDOM.render(jsxelement,rootelement)
+        //const jsxelement= <div className={classN} children={var1}></div>
+        //ReactDOM.render(jsxelement,rootelement)
+        const jsxelement= <div id='app-root' {...props}>{var1}</div>
+
+        ReactDOM.render(jsxelement,rootelement);
+        console.log(jsxelement)
+    </script>
+</body>
