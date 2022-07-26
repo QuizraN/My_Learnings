@@ -26,15 +26,17 @@
   </style>
   <script type="text/babel">
 
-    function Box({className,size,style,...rest})
+    function Box({className='',size,style,...rest})
     {
 
       const sizeClassName = size ? `box--${size}`:''
        
-        return (<div 
-        className={`box ${className} ${sizeClassName}`}
-        style={{fontStyle: 'italic', ...style}}
-        {...rest} />
+        return (
+          <div 
+            className={`box ${className} ${sizeClassName}`}
+            style={{fontStyle: 'italic', ...style}}
+            {...rest} 
+          />
         )
     }
     
@@ -51,8 +53,6 @@
             </Box>
         </div>
     )
-
-
 
     ReactDOM.render(element, document.getElementById('root'))
   </script>
