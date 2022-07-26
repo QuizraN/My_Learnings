@@ -1,0 +1,39 @@
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+   
+    <script type="text/babel">
+        function UsernameForm()
+        {
+            
+            const user=React.useRef()
+            function handleSubmit(e)
+            {
+                e.preventDefault();
+                console.dir(e.target)
+                //const username=e.target[0].value;->rely on order
+                //const username=e.target.elements[0].value;->rely on order
+                //const username=e.target.elements.user.value;
+                //const username=document.querySelector('input').value;->disrupts in multiple inputs
+                const username=user.current.value;
+                alert(`You entered: ${username}`)
+            }
+
+            return(
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor="user">Username:</label>
+                        <input ref={user} id="user" type="text"/>
+                    </div>    
+                    <button type="submit">Submit</button>
+                </form>
+            )
+            //to make use of useRef give ref attribute to which we are referring to
+        }
+
+        ReactDOM.render(<UsernameForm />, document.getElementById('root'))
+
+    </script>
+</body>
