@@ -38,13 +38,13 @@ class FibonacciSeries:
 
 import ipdb;ipdb.set_trace()
 
-for i in FibonacciSeries(5):
-    print(i)
+for index in FibonacciSeries(5):
+    print(index)
 
 print("*********")
 
-for i in FibonacciSeries(5,3):
-    print(i)
+for index in FibonacciSeries(5,3):
+    print(index)
 
 
 

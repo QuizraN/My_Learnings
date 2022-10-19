@@ -32,21 +32,18 @@ def custom_range2(start=0,stop=0,step=1):
 if __name__=='__main__':
 
     start_time = time.time()
-    for i in range(2,5):
-        print(i)
-    # print(range(0))
+    for index in range(2,5):
+        print(index)
     print("range function took", time.time() - start_time, "to run")
 
     start_time = time.time()
-    for i in custom_range(2,5):
-        print(i)
-    # print(range(0))
+    for index in custom_range(2,5):
+        print(index)
     print("custom_range function took", time.time() - start_time, "to run")
    
     start_time = time.time()
-    for i in custom_range2(2,5):
-        print(i)
-    # print(range(0))
+    for index in custom_range2(2,5):
+        print(index)
     print("custom_range function took", time.time() - start_time, "to run")
 
 
