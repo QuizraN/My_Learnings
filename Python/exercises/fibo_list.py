@@ -1,3 +1,4 @@
+
 def FibonacciSeries(count=0,index=0):
 
     indexCount=0
@@ -28,10 +29,6 @@ def FibonacciSeries(count=0,index=0):
 
 # import ipdb;ipdb.set_trace()
 if __name__=='__main__':
-    for index in FibonacciSeries(5):
-        print(index)
-
+    [print(index) for index in FibonacciSeries(5)]
     print("*********")
-
-    for index in FibonacciSeries(5,3):
-        print(index)
+    [print(index) for index in FibonacciSeries(5,3)]
