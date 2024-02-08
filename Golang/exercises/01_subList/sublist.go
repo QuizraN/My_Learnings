@@ -1,5 +1,21 @@
 package sublist
 
+func checkIfSublist(list, sublist []int) bool {
+	for i := 0; i <= len(list)-len(sublist); i++ {
+		matches := true
+		for j := 0; j < len(sublist); j++ {
+			if list[i+j] != sublist[j] {
+				matches = false
+				break
+			}
+		}
+		if matches {
+			return true
+		}
+	}
+	return false
+}
+
 func Sublist(l1, l2 []int) Relation {
 	lengthOfL1, lengthOfL2 := len(l1), len(l2)
 	if lengthOfL1 == 0 && lengthOfL2 == 0 {
@@ -17,36 +33,12 @@ func Sublist(l1, l2 []int) Relation {
 			}
 			return RelationEqual
 		} else if lengthOfL1 > lengthOfL2 {
-			firstValueOfL2 := l2[0]
-			for key1, value1 := range l1 {
-				isSuperList := true
-				if value1 == firstValueOfL2 && key1+lengthOfL2 <= lengthOfL1 {
-					for key2, value2 := range l2 {
-						if value2 != l1[key1+key2] {
-							isSuperList = false
-							break
-						}
-					}
-					if isSuperList {
-						return RelationSuperlist
-					}
-				}
+			if checkIfSublist(l1, l2) {
+				return RelationSuperlist
 			}
 		} else {
-			firstValueOfL1 := l1[0]
-			for key1, value1 := range l2 {
-				isSubList := true
-				if value1 == firstValueOfL1 && key1+lengthOfL1 <= lengthOfL2 {
-					for key2, value2 := range l1 {
-						if value2 != l2[key1+key2] {
-							isSubList = false
-							break
-						}
-					}
-					if isSubList {
-						return RelationSublist
-					}
-				}
+			if checkIfSublist(l2, l1) {
+				return RelationSublist
 			}
 		}
 	}

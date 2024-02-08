@@ -11,8 +11,8 @@ import (
 func main() {
 	fmt.Println("Executing Main Function")
 	//Declarations
-	l1 := []int{1, 2}
-	l2 := []int{1, 2, 3}
+	l1 := []int{1, 2, 3}
+	l2 := []int{12}
 	charIntMap := map[int][]string{1: {"A", "B"}, 2: {"C", "D"}, 3: {"E", "F"}}
 
 	//ex-01
@@ -28,5 +28,4 @@ func main() {
 	// //ex-04
 	fmt.Println("ex-04 result is:")
 	interfaces.Display()
-
 }
