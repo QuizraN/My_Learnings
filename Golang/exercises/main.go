@@ -5,6 +5,7 @@ import (
 	etl "exercises/02_etl"
 	school "exercises/03_grades"
 	interfaces "exercises/04_interfaces"
+	jsondata "exercises/05_jsonData"
 	"fmt"
 )
 
@@ -25,7 +26,13 @@ func main() {
 	fmt.Println("ex-03 result is:")
 	school.TestSchool()
 
-	// //ex-04
+	//ex-04
 	fmt.Println("ex-04 result is:")
 	interfaces.Display()
+
+	//ex-05
+	fmt.Println("ex-05 result is:")
+	// jsondata.GetAllUser()
+	jsondata.CreateUser()
+
 }
