@@ -28,12 +28,8 @@ func list(e []Grade) (s string) {
 }
 
 func (s *School) Add(student string, grade int) {
-	existingGrade := false
 	_, ok := s.grades[grade]
 	if ok {
-		existingGrade = true
-	}
-	if existingGrade {
 		s.grades[grade] = Grade{level: grade, names: append(s.grades[grade].names, student)}
 	} else {
 		newGrade := Grade{level: grade, names: []string{student}}
