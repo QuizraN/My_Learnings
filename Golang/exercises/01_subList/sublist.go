@@ -1,6 +1,6 @@
 package sublist
 
-func checkIfSublist(list, sublist []int) bool {
+func isSublist(list, sublist []int) bool {
 	for i := 0; i <= len(list)-len(sublist); i++ {
 		matches := true
 		for j := 0; j < len(sublist); j++ {
@@ -33,11 +33,11 @@ func Sublist(l1, l2 []int) Relation {
 			}
 			return RelationEqual
 		} else if lengthOfL1 > lengthOfL2 {
-			if checkIfSublist(l1, l2) {
+			if isSublist(l1, l2) {
 				return RelationSuperlist
 			}
 		} else {
-			if checkIfSublist(l2, l1) {
+			if isSublist(l2, l1) {
 				return RelationSublist
 			}
 		}
