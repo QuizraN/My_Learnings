@@ -1,8 +1,10 @@
 package main
 
 import (
-	sublist "exercises/01_SubList"
+	sublist "exercises/01_subList"
 	etl "exercises/02_etl"
+	school "exercises/03_grades"
+	interfaces "exercises/04_interfaces"
 	"fmt"
 )
 
@@ -14,8 +16,17 @@ func main() {
 	charIntMap := map[int][]string{1: {"A", "B"}, 2: {"C", "D"}, 3: {"E", "F"}}
 
 	//ex-01
-	fmt.Println("result is:", sublist.Sublist(l1, l2))
+	fmt.Println("ex-01 result is:", sublist.Sublist(l1, l2))
 
 	//ex-02
-	fmt.Println("result is:", etl.Transform(charIntMap))
+	fmt.Println("ex-02 result is:", etl.Transform(charIntMap))
+
+	//ex-03
+	fmt.Println("ex-03 result is:")
+	school.TestSchool()
+
+	// //ex-04
+	fmt.Println("ex-04 result is:")
+	interfaces.Display()
+
 }
