@@ -11,8 +11,8 @@ import (
 func main() {
 	fmt.Println("Executing Main Function")
 	//Declarations
-	l1 := []int{1, 2, 3}
-	l2 := []int{12}
+	l1 := []int{1, 2, 1, 2, 3}
+	l2 := []int{1, 2, 3}
 	charIntMap := map[int][]string{1: {"A", "B"}, 2: {"C", "D"}, 3: {"E", "F"}}
 
 	//ex-01

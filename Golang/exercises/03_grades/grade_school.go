@@ -2,6 +2,7 @@ package school
 
 import (
 	"fmt"
+	"sort"
 )
 
 // Define the Grade and School types here.
@@ -28,9 +29,9 @@ func list(e []Grade) (s string) {
 }
 
 func (s *School) Add(student string, grade int) {
-	_, ok := s.grades[grade]
-	if ok {
-		s.grades[grade] = Grade{level: grade, names: append(s.grades[grade].names, student)}
+	if _, ok := s.grades[grade]; ok {
+		curr_grade := (*s).grades[grade]
+		curr_grade.names = append(curr_grade.names, student)
 	} else {
 		newGrade := Grade{level: grade, names: []string{student}}
 		s.grades[grade] = newGrade
@@ -47,6 +48,7 @@ func (s *School) Enrollment() []Grade {
 		result = append(result, v)
 	}
 	for k1, v := range result {
+		sort.Strings(result[k1].names)
 		for k2, v2 := range result {
 			if v.level < v2.level {
 				result[k1], result[k2] = result[k2], result[k1]
