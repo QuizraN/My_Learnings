@@ -6,8 +6,22 @@ import (
 	school "exercises/03_grades"
 	interfaces "exercises/04_interfaces"
 	jsondata "exercises/05_jsonData"
+	typeconversions "exercises/06_typeConversions"
+	erratum "exercises/07_errorHandling"
 	"fmt"
 )
+
+type mockResource struct {
+	close  func() error
+	frob   func(string)
+	defrob func(string)
+}
+
+const hello = "hello"
+
+func (mr mockResource) Close() error      { return mr.close() }
+func (mr mockResource) Frob(input string) { mr.frob(input) }
+func (mr mockResource) Defrob(tag string) { mr.defrob(tag) }
 
 func main() {
 	fmt.Println("Executing Main Function")
@@ -35,4 +49,21 @@ func main() {
 	// jsondata.GetAllUser()
 	jsondata.CreateUser()
 
+	//ex-06
+	fmt.Println("ex-06 result is:")
+	typeconversions.TestStringConverstions()
+
+	//ex-07
+	fmt.Println("ex-07 result is:")
+	fmt.Println("TestNoErrors:")
+	erratum.TestNoErrors()
+	fmt.Println("TestKeepTryOpenOnTransient:")
+	erratum.TestKeepTryOpenOnTransient()
+	fmt.Println("TestFailOpenOnNonTransient:")
+	erratum.TestFailOpenOnNonTransient()
+	fmt.Println("TestCallDefrobAndCloseOnFrobError:")
+	erratum.TestCallDefrobAndCloseOnFrobError()
+	fmt.Println("TestCallCloseOnNonFrobError:")
+	erratum.TestCallCloseOnNonFrobError()
+	print("All test cased passed!")
 }
